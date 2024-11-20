@@ -1,0 +1,28 @@
+query listCars(
+  $orderByModel: OrderDirection
+  $orderByRelYear: OrderDirection
+  $limit: Int
+) @auth(level: PUBLIC) {
+  cars(
+    orderBy: [{ model: $orderByModel }, { releaseYear: $orderByRelYear }]
+    limit: $limit
+  ) {
+    id
+    make
+    model
+    releaseYear
+    color
+    electric
+  }
+}
+
+query listCarByID($id: UUID) @auth(level: PUBLIC) {
+  car(id: $id) {
+    id
+    make
+    model
+    releaseYear
+    color
+    electric
+  }
+}

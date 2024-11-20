@@ -1,0 +1,6 @@
+connectorId: car
+generate:
+  javascriptSdk:
+    outputDir: ../../src/app/car-generated
+    package: "@car-app/car-connector"
+    packageJsonDir: ../..

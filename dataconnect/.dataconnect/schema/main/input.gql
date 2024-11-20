@@ -1,0 +1,160 @@
+"""
+✨ `Car_KeyOutput` returns the primary key fields of table type `Car`.
+
+It has the same format as `Car_Key`, but is only used as mutation return value.
+"""
+scalar Car_KeyOutput
+"""
+✨ Generated data input type for table 'Car'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Car_Data {
+  """
+  ✨ Generated from Field `Car`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Car`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Car`.`color` of type `String!`
+  """
+  color: String
+  """
+  ✨ `_expr` server value variant of `color` (✨ Generated from Field `Car`.`color` of type `String!`)
+  """
+  color_expr: String_Expr
+  """
+  ✨ Generated from Field `Car`.`electric` of type `Boolean`
+  """
+  electric: Boolean
+  """
+  ✨ Generated from Field `Car`.`make` of type `String!`
+  """
+  make: String
+  """
+  ✨ `_expr` server value variant of `make` (✨ Generated from Field `Car`.`make` of type `String!`)
+  """
+  make_expr: String_Expr
+  """
+  ✨ Generated from Field `Car`.`model` of type `String!`
+  """
+  model: String
+  """
+  ✨ `_expr` server value variant of `model` (✨ Generated from Field `Car`.`model` of type `String!`)
+  """
+  model_expr: String_Expr
+  """
+  ✨ Generated from Field `Car`.`releaseYear` of type `Int`
+  """
+  releaseYear: Int
+}
+"""
+✨ Generated filter input type for table 'Car'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Car_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Car_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Car_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Car_Filter!]
+  """
+  ✨ Generated from Field `Car`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Car`.`color` of type `String!`
+  """
+  color: String_Filter
+  """
+  ✨ Generated from Field `Car`.`electric` of type `Boolean`
+  """
+  electric: Boolean_Filter
+  """
+  ✨ Generated from Field `Car`.`make` of type `String!`
+  """
+  make: String_Filter
+  """
+  ✨ Generated from Field `Car`.`model` of type `String!`
+  """
+  model: String_Filter
+  """
+  ✨ Generated from Field `Car`.`releaseYear` of type `Int`
+  """
+  releaseYear: Int_Filter
+}
+"""
+✨ Generated first-row input type for table 'Car'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Car_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Car_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Car_Filter
+}
+"""
+✨ Generated key input type for table 'Car'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Car_Key {
+  """
+  ✨ Generated from Field `Car`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Car`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'Car'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Car_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Car_Filter
+}
+"""
+✨ Generated order input type for table 'Car'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Car_Order {
+  """
+  ✨ Generated from Field `Car`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Car`.`color` of type `String!`
+  """
+  color: OrderDirection
+  """
+  ✨ Generated from Field `Car`.`electric` of type `Boolean`
+  """
+  electric: OrderDirection
+  """
+  ✨ Generated from Field `Car`.`make` of type `String!`
+  """
+  make: OrderDirection
+  """
+  ✨ Generated from Field `Car`.`model` of type `String!`
+  """
+  model: OrderDirection
+  """
+  ✨ Generated from Field `Car`.`releaseYear` of type `Int`
+  """
+  releaseYear: OrderDirection
+}

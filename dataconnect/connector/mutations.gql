@@ -1,0 +1,43 @@
+mutation createCar(
+  $id: UUID!
+  $make: String!
+  $model: String!
+  $releaseYear: Int
+  $color: String!
+  $electric: Boolean
+) @auth(level: USER) {
+  car_insert(
+    data: {
+      id: $id
+      make: $make
+      model: $model
+      releaseYear: $releaseYear
+      color: $color
+      electric: $electric
+    }
+  )
+}
+
+mutation updateCar(
+  $id: UUID!
+  $make: String!
+  $model: String!
+  $releaseYear: Int
+  $color: String!
+  $electric: Boolean
+) @auth(level: USER) {
+  car_update(
+    id: $id
+    data: {
+      make: $make
+      model: $model
+      releaseYear: $releaseYear
+      color: $color
+      electric: $electric
+    }
+  )
+}
+
+mutation deleteCar($id: UUID) @auth(level: USER) {
+  car_delete(id: $id)
+}

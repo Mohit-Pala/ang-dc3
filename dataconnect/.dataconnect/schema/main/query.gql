@@ -1,0 +1,45 @@
+extend type Query {
+  """
+  ✨ Look up a single `Car` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  car(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Car_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Car_FirstRow
+  ): Car @fdc_generated(from: "Car", purpose: QUERY_SINGLE)
+  """
+  ✨ List `Car` objects in the table, optionally filtered by `where` conditions.
+  """
+  cars(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Car_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Car_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+  ): [Car!]! @fdc_generated(from: "Car", purpose: QUERY_MULTIPLE)
+}

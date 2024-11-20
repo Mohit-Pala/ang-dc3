@@ -1,0 +1,8 @@
+type Car @table {
+  id: UUID! @default(expr: "uuidV4()")
+  make: String!
+  model: String!
+  releaseYear: Int
+  color: String!
+  electric: Boolean
+}

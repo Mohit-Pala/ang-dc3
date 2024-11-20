@@ -1,0 +1,7 @@
+-> ng new proj_name
+-> code proj_name
+-> firebase login
+-> install dataconnect ext
+-> connect firebase project
+-> run firebase init
+-> 
