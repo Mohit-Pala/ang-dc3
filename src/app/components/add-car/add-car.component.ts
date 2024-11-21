@@ -7,7 +7,7 @@ import { handleAddCar } from '../../services/car-db.service';
 @Component({
   selector: 'app-add-car',
   standalone: true,
-  imports: [FormsModule, CommonModule], 
+  imports: [FormsModule, CommonModule],
   templateUrl: './add-car.component.html',
   styleUrl: './add-car.component.css'
 })
@@ -22,5 +22,5 @@ export class AddCarComponent {
       form.value.releaseYear,
       false
     )
-  }  
+  }
 }
