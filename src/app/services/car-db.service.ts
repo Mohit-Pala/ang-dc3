@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { createCar, CreateCarData, deleteCar, listCarById, ListCarByIdData, listCars, ListCarsData } from '../car-generated';
 
+import { v4 } from 'uuid';
 @Injectable({
   providedIn: 'root'
 })
@@ -86,13 +87,13 @@ export const handleUpdateCar = async (
 };
 
 export const handleAddCar = async (
-  id: string,
   make: string,
   model: string,
   color: string,
   releaseYear: number,
   electric: boolean
 ): Promise<CreateCarData["car_insert"] | null> => {
+  const id = v4()
   try {
     const response = await createCar({
       id: id,

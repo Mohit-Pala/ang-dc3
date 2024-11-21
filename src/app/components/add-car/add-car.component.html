@@ -1,1 +1,32 @@
-<p>add-car works!</p>
+<form #addCarForm="ngForm" (ngSubmit)="onSubmit(addCarForm)">
+    <div>
+        <label for="make">
+            Make:  
+        </label>
+        <input id="make" name="make" type="text" ngModel required>
+
+        <label for="model">
+            Model:  
+        </label>
+        <input id="model" name="model" type="text" ngModel required>
+
+        <label for="color">
+            Color:
+        </label>
+        <input id="color" name="color" type="text" ngModel required>
+
+        <label for="releaseYear">
+            Release Year:  
+        </label>
+        <input id="releaseYear" name="releaseYear" type="number" ngModel required>
+
+        <label for="electric">
+            Electric:
+        </label>
+        <input id="electric" name="electric" type="checkbox" ngModel>
+
+        <div>
+            <button type="submit" [disabled]="!addCarForm.valid">Add</button>
+        </div>
+    </div>
+</form>
