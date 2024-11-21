@@ -14,6 +14,7 @@
                 <th>Release Year</th>
                 <th>Electric</th>
                 <th>Delete</th>
+                <th>View</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,7 @@
                 <td>{{ car.releaseYear }}</td>
                 <td>{{ car.electric }}</td>
                 <td><button (click)="delCar(car.id)">Delete</button></td>
+                <td><button (click)="editCar(car.id)">View</button></td>
             </tr>
         </tbody>
     </table>

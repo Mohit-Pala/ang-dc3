@@ -47,6 +47,13 @@ export class HomepageComponent implements OnInit {
     })
   }
 
+  editCar(id: string | undefined) {
+    if (!id) return
+    console.log(id)
+    this.router.navigateByUrl('/edit-car/' + id)
+  }
+
+
   addCar() {
     this.router.navigateByUrl('/add-car')
   }
