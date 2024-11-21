@@ -50,4 +50,8 @@ export class HomepageComponent implements OnInit {
   addCar() {
     this.router.navigateByUrl('/add-car')
   }
+
+  loginTestUser() {
+    this.authService.login('testlogin@gmail.com', 'testLoginGmail')
+  }
 } 

@@ -1,23 +1,31 @@
-<table>
-    <thead>
-      <tr>
-        <th>Make</th>
-        <th>Model</th>
-        <th>Color</th>
-        <th>Release Year</th>
-        <th>Electric</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let car of cars">
-        <td>{{ car.make }}</td>
-        <td>{{ car.model }}</td>
-        <td>{{ car.color }}</td>
-        <td>{{ car.releaseYear }}</td>
-        <td>{{ car.electric }}</td>
-        <td><button (click)="delCar(car.id)">Delete</button></td>
-      </tr>
-    </tbody>
-  </table>
-  
+<main>
+    <button (click)="addCar()">
+        Addcar
+    </button>
+
+    <button (click)="loginTestUser()">Login</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Color</th>
+                <th>Release Year</th>
+                <th>Electric</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let car of cars">
+                <td>{{ car.make }}</td>
+                <td>{{ car.model }}</td>
+                <td>{{ car.color }}</td>
+                <td>{{ car.releaseYear }}</td>
+                <td>{{ car.electric }}</td>
+                <td><button (click)="delCar(car.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+</main>
