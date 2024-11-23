@@ -93,6 +93,24 @@ export interface UpdateCarVariables {
 
 
 /* Allow users to create refs without passing in DataConnect */
+export function listCarsRef(vars?: ListCarsVariables): QueryRef<ListCarsData, ListCarsVariables>;
+/* Allow users to pass in custom DataConnect instances */
+export function listCarsRef(dc: DataConnect, vars?: ListCarsVariables): QueryRef<ListCarsData,ListCarsVariables>;
+
+export function listCars(vars?: ListCarsVariables): QueryPromise<ListCarsData, ListCarsVariables>;
+export function listCars(dc: DataConnect, vars?: ListCarsVariables): QueryPromise<ListCarsData,ListCarsVariables>;
+
+
+/* Allow users to create refs without passing in DataConnect */
+export function listCarByIdRef(vars?: ListCarByIdVariables): QueryRef<ListCarByIdData, ListCarByIdVariables>;
+/* Allow users to pass in custom DataConnect instances */
+export function listCarByIdRef(dc: DataConnect, vars?: ListCarByIdVariables): QueryRef<ListCarByIdData,ListCarByIdVariables>;
+
+export function listCarById(vars?: ListCarByIdVariables): QueryPromise<ListCarByIdData, ListCarByIdVariables>;
+export function listCarById(dc: DataConnect, vars?: ListCarByIdVariables): QueryPromise<ListCarByIdData,ListCarByIdVariables>;
+
+
+/* Allow users to create refs without passing in DataConnect */
 export function createCarRef(vars: CreateCarVariables): MutationRef<CreateCarData, CreateCarVariables>;
 /* Allow users to pass in custom DataConnect instances */
 export function createCarRef(dc: DataConnect, vars: CreateCarVariables): MutationRef<CreateCarData,CreateCarVariables>;
@@ -117,23 +135,5 @@ export function deleteCarRef(dc: DataConnect, vars?: DeleteCarVariables): Mutati
 
 export function deleteCar(vars?: DeleteCarVariables): MutationPromise<DeleteCarData, DeleteCarVariables>;
 export function deleteCar(dc: DataConnect, vars?: DeleteCarVariables): MutationPromise<DeleteCarData,DeleteCarVariables>;
-
-
-/* Allow users to create refs without passing in DataConnect */
-export function listCarsRef(vars?: ListCarsVariables): QueryRef<ListCarsData, ListCarsVariables>;
-/* Allow users to pass in custom DataConnect instances */
-export function listCarsRef(dc: DataConnect, vars?: ListCarsVariables): QueryRef<ListCarsData,ListCarsVariables>;
-
-export function listCars(vars?: ListCarsVariables): QueryPromise<ListCarsData, ListCarsVariables>;
-export function listCars(dc: DataConnect, vars?: ListCarsVariables): QueryPromise<ListCarsData,ListCarsVariables>;
-
-
-/* Allow users to create refs without passing in DataConnect */
-export function listCarByIdRef(vars?: ListCarByIdVariables): QueryRef<ListCarByIdData, ListCarByIdVariables>;
-/* Allow users to pass in custom DataConnect instances */
-export function listCarByIdRef(dc: DataConnect, vars?: ListCarByIdVariables): QueryRef<ListCarByIdData,ListCarByIdVariables>;
-
-export function listCarById(vars?: ListCarByIdVariables): QueryPromise<ListCarByIdData, ListCarByIdVariables>;
-export function listCarById(dc: DataConnect, vars?: ListCarByIdVariables): QueryPromise<ListCarByIdData,ListCarByIdVariables>;
 
 

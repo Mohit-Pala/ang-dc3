@@ -12,6 +12,30 @@ export const connectorConfig = {
   location: 'us-east1'
 };
 
+export function listCarsRef(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars);
+  if('_useGeneratedSdk' in dcInstance) {
+    dcInstance._useGeneratedSdk();
+  } else {
+    console.error('Please update to the latest version of the Data Connect SDK by running `npm install firebase@dataconnect-preview`.');
+  }
+  return queryRef(dcInstance, 'listCars', inputVars);
+}
+export function listCars(dcOrVars, vars) {
+  return executeQuery(listCarsRef(dcOrVars, vars));
+}
+export function listCarByIdRef(dcOrVars, vars) {
+  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars);
+  if('_useGeneratedSdk' in dcInstance) {
+    dcInstance._useGeneratedSdk();
+  } else {
+    console.error('Please update to the latest version of the Data Connect SDK by running `npm install firebase@dataconnect-preview`.');
+  }
+  return queryRef(dcInstance, 'listCarByID', inputVars);
+}
+export function listCarById(dcOrVars, vars) {
+  return executeQuery(listCarByIdRef(dcOrVars, vars));
+}
 export function createCarRef(dcOrVars, vars) {
   const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
   if('_useGeneratedSdk' in dcInstance) {
@@ -47,28 +71,4 @@ export function deleteCarRef(dcOrVars, vars) {
 }
 export function deleteCar(dcOrVars, vars) {
   return executeMutation(deleteCarRef(dcOrVars, vars));
-}
-export function listCarsRef(dcOrVars, vars) {
-  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars);
-  if('_useGeneratedSdk' in dcInstance) {
-    dcInstance._useGeneratedSdk();
-  } else {
-    console.error('Please update to the latest version of the Data Connect SDK by running `npm install firebase@dataconnect-preview`.');
-  }
-  return queryRef(dcInstance, 'listCars', inputVars);
-}
-export function listCars(dcOrVars, vars) {
-  return executeQuery(listCarsRef(dcOrVars, vars));
-}
-export function listCarByIdRef(dcOrVars, vars) {
-  const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars);
-  if('_useGeneratedSdk' in dcInstance) {
-    dcInstance._useGeneratedSdk();
-  } else {
-    console.error('Please update to the latest version of the Data Connect SDK by running `npm install firebase@dataconnect-preview`.');
-  }
-  return queryRef(dcInstance, 'listCarByID', inputVars);
-}
-export function listCarById(dcOrVars, vars) {
-  return executeQuery(listCarByIdRef(dcOrVars, vars));
 }
