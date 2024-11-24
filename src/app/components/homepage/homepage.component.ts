@@ -15,10 +15,22 @@ import { CommonModule } from '@angular/common';
 export class HomepageComponent implements OnInit {
 
   cars: Car[] = [];
+  signedInBool = false
 
   ngOnInit(): void {
     // get list of all cars, store it in an array
     this.getAllCars()
+
+    this.authService.user$.subscribe((user: any)=>{
+      if(user) {
+        this.signedInBool = true
+        console.log('logged in')
+      }
+      else {
+        this.signedInBool = false
+        console.log('not logged in')
+      }
+    })
   }
   authService = inject(FireauthService)
   router = inject(Router)
@@ -55,7 +67,12 @@ export class HomepageComponent implements OnInit {
 
 
   addCar() {
-    this.router.navigateByUrl('/add-car')
+    if(!this.signedInBool){
+      alert('login to change database')
+    }
+    else {
+      this.router.navigateByUrl('/add-car')
+    }
   }
 
   loginTestUser() {

@@ -1,33 +1,42 @@
-<main>
-    <button (click)="addCar()">
-        Add car
-    </button>
+<main class="flex flex-col items-center h-screen w-screen base border-none">
+    <div class="flex justify-center w-full" *ngIf="!signedInBool">
+        <button class="w-full ml-10 mr-10 mt-4 py-2 px-4 rounded surface" (click)="loginTestUser()">
+            Login
+        </button>
+    </div>
 
-    <button (click)="loginTestUser()">Login</button>
+    <br>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Make</th>
-                <th>Model</th>
-                <th>Color</th>
-                <th>Release Year</th>
-                <th>Electric</th>
-                <th>Delete</th>
-                <th>View</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let car of cars">
-                <td>{{ car.make }}</td>
-                <td>{{ car.model }}</td>
-                <td>{{ car.color }}</td>
-                <td>{{ car.releaseYear }}</td>
-                <td>{{ car.electric }}</td>
-                <td><button (click)="delCar(car.id)">Delete</button></td>
-                <td><button (click)="editCar(car.id)">View</button></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="base">
+        <table class="w-full border-collapse">
+            <thead class="base border-none">
+                <tr class="border-b">
+                    <th class="p-2 text-left">Make</th>
+                    <th class="p-2 text-left">Model</th>
+                    <th class="p-2 text-left">Color</th>
+                    <th class="p-2 text-left">Release Year</th>
+                    <th class="p-2 text-left">Electric</th>
+                    <th class="p-2 text-left">Delete</th>
+                    <th class="p-2 text-left">View</th>
+                </tr>
+            </thead>
 
+            <tbody class="text-center">
+                <tr *ngFor="let car of cars" class="border-b">
+                    <td class="p-2">{{ car.make }}</td>
+                    <td class="p-2">{{ car.model }}</td>
+                    <td class="p-2">{{ car.color }}</td>
+                    <td class="p-2">{{ car.releaseYear }}</td>
+                    <td class="p-2">{{ car.electric }}</td>
+                    <td class="p-2"><button class="surface hover:bg-red-700  font-bold py-2 px-4 rounded"
+                            (click)="delCar(car.id)">Delete</button></td>
+                    <td class="p-2"><button class="surface hover:bg-blue-700 font-bold py-2 px-4 rounded"
+                            (click)="editCar(car.id)">View</button></td>
+                </tr>
+            </tbody>
+            <button class="w-full ml-10 mr-10 mt-4 py-2 px-4 rounded surface hover:bg-green-700" (click)="addCar()">
+                Add car
+            </button>
+        </table>
+    </div>
 </main>
