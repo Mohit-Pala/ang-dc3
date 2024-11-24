@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { FireauthService } from '../../services/fireauth.service';
 import { handleAddCar } from '../../services/car-db.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-car',
@@ -13,6 +14,8 @@ import { handleAddCar } from '../../services/car-db.service';
 })
 export class AddCarComponent {
   authService = inject(FireauthService)
+  router = inject(Router)
+
 
   onSubmit(form: NgForm) {
     handleAddCar(
@@ -22,5 +25,7 @@ export class AddCarComponent {
       form.value.releaseYear,
       false
     )
+
+    this.router.navigateByUrl('/')
   }
 }

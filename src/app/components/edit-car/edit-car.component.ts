@@ -15,6 +15,7 @@ import { Car } from '../../models/carModel';
 })
 export class EditCarComponent implements OnInit {
   authService = inject(FireauthService)
+  editing = false
   id = ''
   currCar: Car = {
     id: '',
@@ -68,5 +69,18 @@ export class EditCarComponent implements OnInit {
         this.router.navigateByUrl('/')
       }
     })
+  }
+
+  onSubmit(form: NgForm) {
+    handleUpdateCar(
+      this.id,
+      form.value.make,
+      form.value.model,
+      form.value.color,
+      form.value.releaseYear,
+      false
+    )
+
+    this.router.navigateByUrl('/')
   }
 }

@@ -1,6 +1,6 @@
-<main class="flex flex-col items-center h-screen w-screen base border-none">
+<main class="main">
     <div class="flex justify-center w-full" *ngIf="!signedInBool">
-        <button class="w-full ml-10 mr-10 mt-4 py-2 px-4 rounded surface" (click)="loginTestUser()">
+        <button class="button" (click)="loginTestUser()">
             Login
         </button>
     </div>
@@ -23,18 +23,18 @@
 
             <tbody class="text-center">
                 <tr *ngFor="let car of cars" class="border-b">
-                    <td class="p-2">{{ car.make }}</td>
-                    <td class="p-2">{{ car.model }}</td>
-                    <td class="p-2">{{ car.color }}</td>
-                    <td class="p-2">{{ car.releaseYear }}</td>
-                    <td class="p-2">{{ car.electric }}</td>
-                    <td class="p-2"><button class="surface hover:bg-red-700  font-bold py-2 px-4 rounded"
+                    <td class="p-2 text-left">{{ car.make }}</td>
+                    <td class="p-2 text-left">{{ car.model }}</td>
+                    <td class="p-2 text-left">{{ car.color }}</td>
+                    <td class="p-2 text-left">{{ car.releaseYear }}</td>
+                    <td class="p-2 text-left">{{ car.electric }}</td>
+                    <td class="p-2 text-left"><button class="surface hover:bg-red-700  font-bold py-2 px-4 rounded"
                             (click)="delCar(car.id)">Delete</button></td>
                     <td class="p-2"><button class="surface hover:bg-blue-700 font-bold py-2 px-4 rounded"
                             (click)="editCar(car.id)">View</button></td>
                 </tr>
             </tbody>
-            <button class="w-full ml-10 mr-10 mt-4 py-2 px-4 rounded surface hover:bg-green-700" (click)="addCar()">
+            <button class="button hover:bg-green-700" (click)="addCar()">
                 Add car
             </button>
         </table>

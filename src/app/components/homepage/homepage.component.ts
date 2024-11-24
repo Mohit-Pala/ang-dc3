@@ -36,20 +36,22 @@ export class HomepageComponent implements OnInit {
   router = inject(Router)
 
   getAllCars() {
-    handleListAllCars().then((data) => {
-      if (data){
-        this.cars = data.map((item: any) => ({
-          id: item.id,
-          make: item.make,
-          model: item.model,
-          releaseYear: item.releaseYear,
-          color: item.color,
-          electric: item.electric
-        }));
-      } else {
-        console.error('No cars found')
-      }     
-    });
+    setTimeout(() => {
+      handleListAllCars().then((data) => {
+        if (data){
+          this.cars = data.map((item: any) => ({
+            id: item.id,
+            make: item.make,
+            model: item.model,
+            releaseYear: item.releaseYear,
+            color: item.color,
+            electric: item.electric
+          }));
+        } else {
+          console.error('No cars found')
+        }     
+      });
+    }, 200);
   }
 
   delCar(id: string | undefined) {

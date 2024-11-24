@@ -1,0 +1,64 @@
+<main class="main">
+    <div *ngIf="!editing">
+        <h3>
+            Now Viewing:
+        </h3>
+        <h3>
+            Car: {{currCar.make}}, {{currCar.model}}
+        </h3>
+        <h2>
+            id: {{currCar.id}}
+        </h2>
+        <p>
+            Color: {{currCar.color}}
+        </p>
+        <p>
+            Release Year: {{currCar.releaseYear}}
+        </p>
+        <p>
+            Electric: {{currCar.electric}}
+        </p>
+        <button (click)="editing = !editing" class="button">
+            Edit this car
+        </button>
+    </div>
+
+    <div *ngIf="editing">
+        <h3>
+            Now Editing
+        </h3>
+
+        <form #addCarForm="ngForm" (ngSubmit)="onSubmit(addCarForm)" >
+            <div class="w-full flex flex-col items-center jus base border-2 m-5 p-5 rounded-lg">
+                <label for="make">
+                    Make:  
+                </label>
+                <input id="make" name="make" type="text" ngModel="{{currCar.make}}" required class="m-2 surface p-4 rounded-lg">
+        
+                <label for="model">
+                    Model:  
+                </label>
+                <input id="model" name="model" type="text" ngModel="{{currCar.model}}" required class="m-2 surface p-4 rounded-lg">
+        
+                <label for="color">
+                    Color:
+                </label>
+                <input id="color" name="color" type="text" ngModel="{{currCar.color}}" required class="m-2 surface p-4 rounded-lg">
+        
+                <label for="releaseYear">
+                    Release Year:  
+                </label>
+                <input id="releaseYear" name="releaseYear" type="number" ngModel required class="m-2 surface p-4 rounded-lg">
+        
+                <label for="electric">
+                    Electric:
+                </label>
+                <input id="electric" name="electric" type="checkbox" ngModel class="m-2 surface p-4 rounded-lg">
+        
+                <div>
+                    <button type="submit" [disabled]="!addCarForm.valid" class="m-2 button surface p-2 rounded-lg hover:bg-green-700">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
